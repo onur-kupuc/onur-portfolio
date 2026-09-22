@@ -8,7 +8,7 @@ function Hero() {
             <div className="hero-content">
                 <div className="hero-eyebrow">
                     <span className="status-dot" />
-                    WEB DEVELOPMENT
+                    WEB DEVELOPMENT • ONUR KÜPÜÇ
                 </div>
 
                 <h1>
