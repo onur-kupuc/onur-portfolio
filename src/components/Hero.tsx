@@ -1,25 +1,30 @@
 function Hero() {
     return (
-        <section className="hero">
+        <section id="top" className="hero">
             <div className="hero-grid" />
+            <div className="hero-noise" />
+            <div className="hero-glow hero-glow-one" />
+            <div className="hero-glow hero-glow-two" />
 
-            <div className="hero-glow" />
+            <div className="hero-orbit hero-orbit-one" />
+            <div className="hero-orbit hero-orbit-two" />
 
             <div className="hero-content">
                 <div className="hero-eyebrow">
                     <span className="status-dot" />
-                    WEB DEVELOPMENT • ONUR KÜPÜÇ
+                    WEB GELİŞTİRME
                 </div>
 
                 <h1>
                     Fikirleri
-                    <br />
-                    <span>web'e dönüştürüyorum.</span>
+                    <span>dijitale</span>
+                    dönüştürüyorum.
                 </h1>
 
                 <p className="hero-description">
-                    Markalar ve dijital ürünler için modern, hızlı ve
-                    kullanıcı odaklı web deneyimleri geliştiriyorum.
+                    Web siteleri, mobil uygulamalar ve dijital ürünler
+                    geliştiriyorum. Fikirleri yalnızca tasarlamakla
+                    kalmayıp çalışan dijital deneyimlere dönüştürüyorum.
                 </p>
 
                 <div className="hero-actions">
@@ -28,66 +33,82 @@ function Hero() {
                         <span>↗</span>
                     </a>
 
-                    <a href="#contact" className="button button-secondary">
-                        Benimle Çalış
+                    <a
+                        href="https://wa.me/905398863299"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="button button-secondary"
+                    >
+                        WhatsApp'tan Yaz
                     </a>
+                </div>
+
+                <div className="hero-fields">
+                    <div className="hero-field">
+                        <span>01</span>
+                        <strong>WEB</strong>
+                    </div>
+
+                    <div className="hero-field">
+                        <span>02</span>
+                        <strong>MOBİL</strong>
+                    </div>
+
+                    <div className="hero-field">
+                        <span>03</span>
+                        <strong>DİJİTAL ÜRÜN</strong>
+                    </div>
                 </div>
             </div>
 
-            <div className="hero-signature" aria-hidden="true">
-                <svg
-                    viewBox="0 0 400 400"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <circle
-                        cx="200"
-                        cy="200"
-                        r="150"
-                        stroke="currentColor"
-                        strokeWidth="1"
+            <div className="hero-visual">
+                <div className="hero-visual-header">
+                    <span>ONUR KÜPÜÇ</span>
+                    <span>2026 / 001</span>
+                </div>
+
+                <div className="hero-logo-frame">
+                    <div className="hero-logo-corner hero-logo-corner-tl" />
+                    <div className="hero-logo-corner hero-logo-corner-br" />
+
+                    <img
+                        src="/images/logo.png"
+                        alt="Onur Küpüç OK logo"
+                        className="hero-logo-image"
                     />
 
-                    <path
-                        d="M200 50V350"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                    />
+                    <div className="hero-logo-index">
+                        <span>IDENTITY</span>
+                        <strong>OK / 01</strong>
+                    </div>
+                </div>
 
-                    <path
-                        d="M50 200H350"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                    />
+                <div className="hero-project-tag hero-project-tag-top">
+                    <span>01</span>
+                    <strong>WEB</strong>
+                </div>
 
-                    <path
-                        d="M130 200C130 155 158 125 200 125C242 125 270 155 270 200C270 245 242 275 200 275"
-                        stroke="currentColor"
-                        strokeWidth="5"
-                        strokeLinecap="round"
-                    />
+                <div className="hero-project-tag hero-project-tag-bottom">
+                    <span>03</span>
+                    <strong>PRODUCT</strong>
+                </div>
 
-                    <path
-                        d="M200 125V275M200 200L270 135M200 200L270 265"
-                        stroke="currentColor"
-                        strokeWidth="5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
+                <div className="hero-cross hero-cross-one">+</div>
+                <div className="hero-cross hero-cross-two">+</div>
 
-                    <path
-                        d="M260 200H325M305 180L325 200L305 220"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                </svg>
+                <div className="hero-coordinates">
+                    <span>37.8746° N</span>
+                    <span>32.4932° E</span>
+                </div>
             </div>
 
             <div className="hero-bottom">
-                <span>BASED IN TÜRKİYE</span>
-                <span>SCROLL TO EXPLORE ↓</span>
+                <span>ONUR KÜPÜÇ / DIGITAL WORK</span>
+
+                <a href="#projects">
+                    KEŞFETMEK İÇİN KAYDIR
+                    <span>↓</span>
+                </a>
             </div>
         </section>
     )
