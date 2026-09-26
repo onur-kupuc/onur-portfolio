@@ -3,16 +3,18 @@ function Hero() {
         <section id="top" className="hero">
             <div className="hero-grid" />
             <div className="hero-noise" />
+
             <div className="hero-glow hero-glow-one" />
             <div className="hero-glow hero-glow-two" />
 
             <div className="hero-orbit hero-orbit-one" />
             <div className="hero-orbit hero-orbit-two" />
 
+            {/* SOL TARAF */}
             <div className="hero-content">
                 <div className="hero-eyebrow">
                     <span className="status-dot" />
-                    WEB GELİŞTİRME
+                    DİJİTAL ÜRÜN GELİŞTİRME
                 </div>
 
                 <h1>
@@ -56,52 +58,81 @@ function Hero() {
 
                     <div className="hero-field">
                         <span>03</span>
-                        <strong>DİJİTAL ÜRÜN</strong>
+                        <strong>ÜRÜN</strong>
                     </div>
                 </div>
             </div>
 
+            {/* SAĞ TARAF */}
             <div className="hero-visual">
-                <div className="hero-visual-header">
-                    <span>ONUR KÜPÜÇ</span>
-                    <span>2026 / 001</span>
-                </div>
 
+                {/* BÜYÜK ANA GÖRSEL */}
                 <div className="hero-logo-frame">
-                    <div className="hero-logo-corner hero-logo-corner-tl" />
-                    <div className="hero-logo-corner hero-logo-corner-br" />
+                    <div className="hero-logo-glow" />
 
                     <img
                         src="/images/logo.png"
-                        alt="Onur Küpüç OK logo"
+                        alt="Onur Küpüç"
                         className="hero-logo-image"
                     />
 
-                    <div className="hero-logo-index">
-                        <span>IDENTITY</span>
-                        <strong>OK / 01</strong>
+                    <div className="hero-logo-corner hero-logo-corner-tl" />
+                    <div className="hero-logo-corner hero-logo-corner-br" />
+                </div>
+
+                {/* WEB */}
+                <div className="hero-service-card hero-service-card-one">
+                    <span className="hero-service-number">01</span>
+
+                    <div className="hero-service-icon">
+                        ↗
+                    </div>
+
+                    <div className="hero-service-content">
+                        <span>WEB</span>
+                        <strong>Web Siteleri</strong>
+                        <p>
+                            Modern · Hızlı · Responsive
+                        </p>
                     </div>
                 </div>
 
-                <div className="hero-project-tag hero-project-tag-top">
-                    <span>01</span>
-                    <strong>WEB</strong>
+                {/* MOBİL */}
+                <div className="hero-service-card hero-service-card-two">
+                    <span className="hero-service-number">02</span>
+
+                    <div className="hero-service-icon">
+                        ↗
+                    </div>
+
+                    <div className="hero-service-content">
+                        <span>MOBILE</span>
+                        <strong>Mobil Uygulamalar</strong>
+                        <p>
+                            iOS · Android · Ürün
+                        </p>
+                    </div>
                 </div>
 
-                <div className="hero-project-tag hero-project-tag-bottom">
-                    <span>03</span>
-                    <strong>PRODUCT</strong>
-                </div>
+                {/* DİJİTAL ÜRÜN */}
+                <div className="hero-service-card hero-service-card-three">
+                    <span className="hero-service-number">03</span>
 
-                <div className="hero-cross hero-cross-one">+</div>
-                <div className="hero-cross hero-cross-two">+</div>
+                    <div className="hero-service-icon">
+                        ↗
+                    </div>
 
-                <div className="hero-coordinates">
-                    <span>37.8746° N</span>
-                    <span>32.4932° E</span>
+                    <div className="hero-service-content">
+                        <span>PRODUCT</span>
+                        <strong>Dijital Ürünler</strong>
+                        <p>
+                            SaaS · Platform · Fikir
+                        </p>
+                    </div>
                 </div>
             </div>
 
+            {/* ALT BİLGİ */}
             <div className="hero-bottom">
                 <span>ONUR KÜPÜÇ / DIGITAL WORK</span>
 

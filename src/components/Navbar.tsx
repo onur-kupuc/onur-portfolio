@@ -1,44 +1,15 @@
-function LogoMark() {
-    return (
-        <svg
-            className="logo-mark"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-        >
-            <path
-                d="M30 10C19 10 11 18 11 32C11 46 19 54 30 54"
-                stroke="currentColor"
-                strokeWidth="5"
-                strokeLinecap="round"
-            />
 
-            <path
-                d="M30 10V54M30 32L48 13M30 32L48 51"
-                stroke="currentColor"
-                strokeWidth="5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-
-            <path
-                d="M43 32H56M50 25L57 32L50 39"
-                stroke="currentColor"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    )
-}
 
 function Navbar() {
     return (
         <header className="navbar">
             <a href="#top" className="navbar-logo" aria-label="Onur Küpüç ana sayfa">
                 <div className="logo">
-                    <LogoMark />
+                    <img
+                        src="/images/logo_min.png"
+                        alt=""
+                        className="logo-image"
+                    />
                     <span>ONUR KÜPÜÇ</span>
                 </div>
             </a>
