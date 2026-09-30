@@ -1489,7 +1489,6 @@ summary {
 /* =========================================================
    PROJECTS
    ========================================================= */
-
 .projects-section {
   padding-top: 130px;
 }
@@ -1497,10 +1496,8 @@ summary {
 .projects-heading {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-
   gap: 80px;
-
-  padding: 70px 0 90px;
+  padding: 70px 0 55px;
 }
 
 .projects-heading h2,
@@ -1508,15 +1505,10 @@ summary {
 .process-heading h2,
 .about-heading h2 {
   margin: 0;
-
   color: var(--text);
-
   font-size: clamp(54px, 7vw, 100px);
-
   line-height: 0.9;
-
   letter-spacing: -0.07em;
-
   font-weight: 800;
 }
 
@@ -1529,223 +1521,415 @@ summary {
 
 .projects-heading p {
   align-self: end;
-
   max-width: 450px;
-
   margin: 0;
-
   color: var(--muted);
-
   font-size: 16px;
   line-height: 1.8;
 }
 
+/* ========================================================= PROJECT FILTERS ========================================================= */
+.projects-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 35px;
+  border-bottom: 1px solid var(--border);
+}
 
-/* PROJECT LIST */
+.project-filter {
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
 
+.project-filter:hover {
+  color: var(--text);
+  border-color: rgba(200, 255, 61, 0.35);
+}
+
+.project-filter.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0b0d10;
+}
+
+.project-filter:active {
+  transform: scale(0.97);
+}
+
+/* ========================================================= PROJECT LIST ========================================================= */
 .projects-list {
-  border-top: 1px solid var(--border);
+  border-top: 0;
 }
 
 .project-card {
   position: relative;
-
   display: grid;
   grid-template-columns: 55px minmax(0, 1fr) 310px;
-
   gap: 30px;
-
   padding: 34px 0;
-
   border-bottom: 1px solid var(--border);
-
-  transition:
-    padding 0.4s var(--ease),
-    border-color 0.3s ease;
+  transition: padding 0.4s var(--ease), border-color 0.3s ease;
 }
 
 .project-card:hover {
   padding-left: 12px;
   padding-right: 12px;
-
   border-color: rgba(200, 255, 61, 0.25);
 }
 
 .project-number {
   color: var(--accent);
-
   font-size: 10px;
   font-weight: 800;
-
   letter-spacing: 0.12em;
 }
 
+/* ========================================================= PROJECT PREVIEW ========================================================= */
 .project-preview {
   position: relative;
-
   min-height: 360px;
-
   overflow: hidden;
-
   border: 1px solid var(--border-soft);
-
-  background:
-    linear-gradient(135deg,
-      rgba(200, 255, 61, 0.04),
-      transparent 40%),
-    var(--surface);
+  background: linear-gradient(135deg, rgba(200, 255, 61, 0.04), transparent 40%), var(--surface);
 }
 
+.project-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 45%, rgba(200, 255, 61, 0.04));
+  pointer-events: none;
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease), filter 0.5s ease;
+}
+
+.project-card:hover .project-preview img {
+  transform: scale(1.035);
+}
+
+/* ========================================================= PROJECT PREVIEW OVERLAY ========================================================= */
 .project-preview-overlay {
   position: absolute;
-
   top: 18px;
   left: 20px;
   right: 20px;
-
-  z-index: 2;
-
+  z-index: 3;
   display: flex;
   justify-content: space-between;
-
   color: rgba(244, 244, 239, 0.42);
-
   font-size: 8px;
   font-weight: 800;
-
   letter-spacing: 0.14em;
+  pointer-events: none;
 }
 
+/* ========================================================= PROJECT PLACEHOLDER ========================================================= */
 .project-preview-placeholder {
   position: absolute;
-
   inset: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 12px;
-
   color: rgba(244, 244, 239, 0.7);
-
-  background:
-    radial-gradient(circle at center,
-      rgba(200, 255, 61, 0.08),
-      transparent 34%);
+  background: radial-gradient(circle at center, rgba(200, 255, 61, 0.08), transparent 34%);
 }
 
 .project-preview-placeholder span {
   font-size: clamp(24px, 3vw, 44px);
-
   font-weight: 800;
-
   letter-spacing: -0.04em;
+  text-align: center;
 }
 
 .project-preview-placeholder small {
   color: var(--accent);
-
   font-size: 8px;
   font-weight: 800;
-
   letter-spacing: 0.2em;
 }
 
+/* ========================================================= PROJECT INFO ========================================================= */
 .project-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   min-width: 0;
 }
 
 .project-category {
   color: var(--accent);
-
   font-size: 9px;
   font-weight: 800;
-
   letter-spacing: 0.16em;
 }
 
 .project-info h3 {
   margin: 13px 0 10px;
-
   color: var(--text);
-
   font-size: clamp(25px, 3vw, 40px);
-
   line-height: 1;
-
   letter-spacing: -0.04em;
 }
 
 .project-info p {
   max-width: 280px;
-
   margin: 0;
-
   color: var(--muted);
-
   font-size: 14px;
   line-height: 1.7;
 }
 
+/* ========================================================= TECHNOLOGIES ========================================================= */
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.project-technologies span {
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  color: rgba(244, 244, 239, 0.48);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* ========================================================= PROJECT META ========================================================= */
+.project-meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 35px;
+}
+
 .project-status {
   color: rgba(244, 244, 239, 0.32);
-
   font-size: 8px;
   font-weight: 800;
-
   letter-spacing: 0.15em;
 }
 
-.project-card-coming {
-  min-height: 280px;
-
-  display: grid;
-  grid-template-columns: 55px 1fr auto;
-
+/* ========================================================= VIEW PROJECT ========================================================= */
+.project-link {
+  display: inline-flex;
   align-items: center;
-}
-
-.project-coming-content span {
-  color: var(--accent);
-
-  font-size: 9px;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 8px;
   font-weight: 800;
-
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition: color 0.25s ease, gap 0.25s ease;
 }
 
-.project-coming-content h3 {
-  margin: 15px 0 10px;
+.project-link span {
+  color: var(--accent);
+  font-size: 15px;
+  transition: transform 0.25s ease;
+}
+
+.project-link:hover {
+  color: var(--accent);
+  gap: 12px;
+}
+
+.project-link:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* ========================================================= MOBILE ========================================================= */
+@media (max-width: 800px) {
+  .projects-section {
+    padding-top: 90px;
+  }
+
+  .projects-heading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 55px 0 40px;
+  }
+
+  .projects-heading p {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  /* FILTERS */
+  .projects-filters {
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 25px;
+    scrollbar-width: none;
+  }
+
+  .projects-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-filter {
+    flex-shrink: 0;
+    padding: 9px 14px;
+    font-size: 8px;
+  }
+
+  /* PROJECT CARD */
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 0;
+  }
+
+  .project-card:hover {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .project-number {
+    order: 1;
+  }
+
+  .project-preview {
+    order: 2;
+    min-height: 250px;
+  }
+
+  .project-preview img {
+    min-height: 250px;
+  }
+
+  .project-info {
+    order: 3;
+  }
+
+  .project-info h3 {
+    font-size: 30px;
+  }
+
+  .project-info p {
+    max-width: 100%;
+  }
+
+  .project-meta {
+    align-items: center;
+    margin-top: 28px;
+  }
+
+  .project-technologies {
+    margin-top: 20px;
+  }
+}
+
+```css
+/* =========================================================
+   LOAD MORE
+   ========================================================= */
+
+.projects-load-more {
+  display: flex;
+  justify-content: center;
+
+  padding: 55px 0 10px;
+}
+
+.projects-load-more-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 16px 22px;
+
+  border: 1px solid var(--border);
+  background: transparent;
 
   color: var(--text);
 
-  font-size: clamp(32px, 4vw, 58px);
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
 
-  line-height: 0.98;
+  cursor: pointer;
 
-  letter-spacing: -0.055em;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    gap 0.3s ease;
 }
 
-.project-coming-content p {
-  margin: 0;
+.projects-load-more-button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0b0d10;
+  gap: 20px;
+}
 
+.projects-load-more-count {
   color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.1em;
 }
 
-.project-coming-mark {
+.projects-load-more-button:hover .projects-load-more-count {
+  color: rgba(11, 13, 16, 0.55);
+}
+
+.projects-load-more-arrow {
   color: var(--accent);
+  font-size: 15px;
 
-  font-size: 70px;
-
-  font-weight: 200;
+  transition: transform 0.3s ease;
 }
 
+.projects-load-more-button:hover .projects-load-more-arrow {
+  color: #0b0d10;
+  transform: translateY(3px);
+}
+
+
+/* =========================================================
+   LOAD MORE - MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .projects-load-more {
+    padding: 40px 0 5px;
+  }
+
+  .projects-load-more-button {
+    width: 100%;
+
+    justify-content: center;
+
+    padding: 15px 18px;
+  }
+}
 
 /* =========================================================
    SERVICES
